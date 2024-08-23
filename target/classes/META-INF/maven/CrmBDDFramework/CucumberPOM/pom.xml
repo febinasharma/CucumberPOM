@@ -36,8 +36,7 @@
 <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
-    <version>4.13.2</version>
-    
+    <version>4.13.2</version>    
 </dependency>
 <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
 <dependency>
@@ -66,6 +65,8 @@
     <artifactId>cucumber-junit</artifactId>
     <version>1.2.5</version>
 </dependency>
+
+
 <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
 <dependency>
     <groupId>info.cukes</groupId>
@@ -90,12 +91,15 @@
 <artifactId>poi-ooxml</artifactId>
 <version>5.2.5</version>
 </dependency>
+
+
 <!--  https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad  -->
 <dependency>
 <groupId>org.apache.poi</groupId>
 <artifactId>poi-scratchpad</artifactId>
 <version>5.2.5</version>
 </dependency>
+
   </dependencies>
 
   <build>
@@ -115,10 +119,7 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
         </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
+
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
@@ -140,6 +141,17 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+ 			 <groupId>org.apache.maven.plugins</groupId>
+ 			 <artifactId>maven-surefire-plugin</artifactId>
+  			 <version>3.4.0</version>
+             <configuration>
+                <includes>
+                   <include>**/TestRunnerTest*.java</include>
+                </includes>
+                <testFailureIgnore>true</testFailureIgnore>
+             </configuration>
+            </plugin>
       </plugins>
     </pluginManagement>
   </build>

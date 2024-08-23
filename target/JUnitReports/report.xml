@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="28.22" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="Create new contacts" name="Add new contacts - #1.1" time="14.714">
+<testsuite name="Cucumber" time="27.544" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Create new contacts" name="Add new contacts - #1.1" time="13.98">
 <system-out><![CDATA[
 Given User is logged into the application...................................passed
 When User is on the contacts page...........................................passed
@@ -8,7 +8,7 @@ Then User clicks on New Contacts from the menu..............................pass
 Then User enters new contact details Mr., Basil, Arthur, Dell...............passed
 ]]></system-out>
 </testcase>
-<testcase classname="Create new contacts" name="Add new contacts - #1.2" time="13.339">
+<testcase classname="Create new contacts" name="Add new contacts - #1.2" time="13.33">
 <system-out><![CDATA[
 Given User is logged into the application...................................passed
 When User is on the contacts page...........................................passed
