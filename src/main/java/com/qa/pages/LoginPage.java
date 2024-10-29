@@ -48,12 +48,6 @@ public class LoginPage extends TestBase{
 		username.sendKeys(un);
 		password.sendKeys(pwd);
 		loginBtn.click();
-//		driver.switchTo().frame(prop.getProperty("HomePageMainframe"));
-//		Actions action = new Actions(driver);
-//		action.moveToElement(contactsLink).build().perform();
-//		newContactsLink.click();
-//		Thread.sleep(3000);
-//		return new ContactsPage();
 		return new HomePage();
 	}
 	

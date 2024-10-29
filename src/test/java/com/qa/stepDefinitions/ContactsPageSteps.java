@@ -27,7 +27,7 @@ public class ContactsPageSteps extends TestBase{
 //		contactsPg=new ContactsPage();
 		homePg=loginPg.login(prop.getProperty("username"), prop.getProperty("password"));
 		Assert.assertEquals(homePg.verifyPageTitle(), "CRMPRO");
-		TestUtil.takeScreenshotAtEndOfTest();
+//		TestUtil.takeScreenshotAtEndOfTest();
 	}
 	@When("User is on the contacts page")
 	public void user_is_on_the_contacts_page() throws InterruptedException {
@@ -39,12 +39,12 @@ public class ContactsPageSteps extends TestBase{
 	public void user_clicks_on_new_contacts_from_the_menu() {
 		//driver.switchTo().frame(prop.getProperty("HomePageMainframe"));
 		//contactsPg.clickOnNewContactsLink();
-		System.out.println("2");
 		}
 	@Then("^User enters new contact details (.*),(.*),(.*),(.*)$")
 	public void user_enters_new_contact_details(String title, String fName, String lName, String cName) throws IOException {
 		contactsPg.createNewContact(title,fName, lName, cName);
 		TestUtil.takeScreenshotAtEndOfTest();
+		TestBase.tearDown();
 	}
 	
 }

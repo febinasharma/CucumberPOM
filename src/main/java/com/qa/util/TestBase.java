@@ -30,7 +30,7 @@ public static void initialize()
 {
 	String projectPath= System.getProperty("user.dir");
 	System.out.println(projectPath);
-	System.setProperty("webdriver.chrome.driver","C:\\\\Drivers\\\\chromedriver-win64 (3)\\\\chromedriver-win64\\\\chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\febin\\eclipse-workspace\\CucumberPOM\\src\\test\\resource\\Driver\\chromedriver.exe");
 	driver=new ChromeDriver();
 	driver.get(prop.getProperty("url"));
 	driver.manage().window().maximize();
@@ -38,5 +38,8 @@ public static void initialize()
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
 	
 	
+}
+public static void tearDown() {
+	driver.close();
 }
 }

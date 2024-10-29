@@ -1,12 +1,10 @@
-Feature: Create new contacts
+Feature: HomePage Feature
 
-  Scenario Outline: Add new contacts
-    Given User is logged into the application
-    When User is on the contacts page
-    Then User clicks on New Contacts from the menu
-    Then User enters new contact details <title>, <firstname>, <lastname>, <companyname>
+  Scenario: Verify if user can login and land on the Home Page
+    Given User opens the browser and enter the url
+    When User is on the login page of the application
+    Then User enters valid credentials and logs into appilcation
+    Then User is navigated to Home Page
+    
 
-    Examples: 
-      | title | firstname | lastname | companyname |
-      | Mr.   | Basil     | Arthur   | Dell        |
-      | Miss | Dean      | Amy      | Bell        |
+

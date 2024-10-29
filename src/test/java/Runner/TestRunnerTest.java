@@ -6,12 +6,11 @@ import io.cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="C:/Users/febin/eclipse-workspace/CucumberPOM/src/test/resource/com/qa/features/homePage.feature",
+		features="C:/Users/febin/eclipse-workspace/CucumberPOM/src/test/resource/com/qa/features/",
 		glue= {"com.qa.stepDefinitions"},
 		dryRun=false,
 		monochrome = true,
 		plugin={"pretty","html:target/HtmlReports","json:target/JSONReports/report.json","junit:target/JUnitReports/report.xml"}
-		
 		
 		)
 public class TestRunnerTest {
