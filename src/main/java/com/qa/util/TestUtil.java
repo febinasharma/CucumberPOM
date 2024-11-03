@@ -6,6 +6,8 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import cucumber.api.Scenario;
 import io.cucumber.java.After;
@@ -22,6 +24,17 @@ public class TestUtil extends TestBase {
 		File scrFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String currentDir= System.getProperty("user.dir");
 		FileUtils.copyFile(scrFile, new File(currentDir+"/screenshots/"+System.currentTimeMillis()+".png"));
+	}
+	
+	public static void switchToFrame(String frameName)
+	{
+		driver.switchTo().frame(frameName);
+	}
+	
+	public static void performMenuAction(WebElement menuName)
+	{
+		Actions action=new Actions(driver);
+		action.moveToElement(menuName).build().perform();
 	}
 
 //	@After(order=1)

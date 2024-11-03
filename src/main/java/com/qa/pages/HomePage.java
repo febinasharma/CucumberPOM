@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.qa.util.TestBase;
+import com.qa.util.TestUtil;
 
 public class HomePage extends TestBase{
 	
@@ -21,8 +22,12 @@ public class HomePage extends TestBase{
 		
 	@FindBy (xpath="//a[contains(text(),'Tasks')]")
 	WebElement tasksLink;	
+	
 	@FindBy (xpath="//a[contains(text(),'New Contact')]")
 	WebElement newContactsLink;
+	
+	@FindBy(xpath="//a[@title='Contacts']")
+	WebElement contactsMenu;
 
 
 	//Initializing the Page Objects
@@ -40,6 +45,15 @@ public class HomePage extends TestBase{
 	{
 		
 		return userNameLabel.isDisplayed();
+	}
+	
+	public ContactsPage clickOnContactsMenu()
+	{
+		TestUtil.switchToFrame(prop.getProperty("HomePageMainframe"));
+		TestUtil.performMenuAction(contactsMenu);
+		contactsMenu.click();
+		return new ContactsPage();
+		
 	}
 	public ContactsPage clickOnContactLink() throws InterruptedException
 	{

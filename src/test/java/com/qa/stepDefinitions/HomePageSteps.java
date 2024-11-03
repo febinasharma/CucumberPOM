@@ -41,5 +41,16 @@ public class HomePageSteps extends TestBase{
 		Assert.assertEquals("CRMPRO", homePg.verifyPageTitle());
 		//TestBase.tearDown();
 	}
+	
+	
+	@When("User clicks on the Contacts menu option")
+	public void user_clicks_on_the_contacts_menu_option() throws InterruptedException {
+	    contactsPg=homePg.clickOnContactsMenu();
+	}
+	@Then("User is on the Contacts Page")
+	public void user_is_on_the_contacts_page() {
+	    Assert.assertTrue(contactsPg.verifyContactsPageLabel());
+	    TestBase.tearDown();
+	}
 
 }

@@ -40,6 +40,7 @@ public class ContactsPage extends TestBase{
 	
 	@FindBy (xpath="//a[contains(text(),'New Contact')]")
 	WebElement newContactsLink;
+	
 
 //Initializing the Page Objects
 	public ContactsPage()
