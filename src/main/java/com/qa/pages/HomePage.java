@@ -28,6 +28,9 @@ public class HomePage extends TestBase{
 	
 	@FindBy(xpath="//a[@title='Contacts']")
 	WebElement contactsMenu;
+	
+	@FindBy(xpath="//a[contains(.,'New Deal')]")
+	WebElement newDealMenuOption;
 
 
 	//Initializing the Page Objects
@@ -64,6 +67,13 @@ public class HomePage extends TestBase{
 		newContactsLink.click();
 		Thread.sleep(3000);
 		return new ContactsPage();
+	}
+	public DealsPage clickOnNewDealsLink()
+	{
+		TestUtil.switchToFrame(prop.getProperty("HomePageMainframe"));
+		TestUtil.performMenuAction(dealsLink);
+		newDealMenuOption.click();
+		return new DealsPage();
 	}
 	
 

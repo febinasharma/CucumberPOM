@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="C:/Users/febin/eclipse-workspace/CucumberPOM/src/test/resource/com/qa/features/homePage.feature",
+		features="C:/Users/febin/eclipse-workspace/CucumberPOM/src/test/resource/com/qa/features/dealsPage.feature",
 		glue= {"com.qa.stepDefinitions"},
 		dryRun=false,
 		monochrome = true,

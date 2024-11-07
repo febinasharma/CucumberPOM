@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="17.606" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="HomePage Feature" name="Verify if user can login and land on the Home Page" time="8.248">
+<testsuite name="Cucumber" time="30.414" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Deals Feature" name="Create New Deals - #1.1" time="15.692">
 <system-out><![CDATA[
-Given User opens the browser and enter the url..............................passed
-When User is on the login page of the application...........................passed
-Then User enters valid credentials and logs into appilcation................passed
-Then User is navigated to Home Page.........................................passed
+Given User is logged into the application and is on the Home Page...........passed
+When User is on the New Deals Page..........................................passed
+Then User clicks on New Deals from the menu.................................passed
+Then User enters new deals details Lindt, Meeka,8-8-2025....................passed
 ]]></system-out>
 </testcase>
-<testcase classname="HomePage Feature" name="Verify if the user can access Contacts Menu option" time="9.191">
+<testcase classname="Deals Feature" name="Create New Deals - #1.2" time="14.539">
 <system-out><![CDATA[
-Given User opens the browser and enter the url..............................passed
-And User is on the login page of the application............................passed
-And User enters valid credentials and logs into appilcation.................passed
-And User is navigated to Home Page..........................................passed
-When User clicks on the Contacts menu option................................passed
-Then User is on the Contacts Page...........................................passed
+Given User is logged into the application and is on the Home Page...........passed
+When User is on the New Deals Page..........................................passed
+Then User clicks on New Deals from the menu.................................passed
+Then User enters new deals details Telas, Ben,11-11-2025....................passed
 ]]></system-out>
 </testcase>
 </testsuite>
