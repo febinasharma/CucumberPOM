@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="30.414" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="Deals Feature" name="Create New Deals - #1.1" time="15.692">
+<testsuite name="Cucumber" time="45.925" tests="4" skipped="0" failures="0" errors="0">
+<testcase classname="Deals Feature" name="Verify is user is able to navigate to Deals Page from the Home Page" time="9.148">
 <system-out><![CDATA[
 Given User is logged into the application and is on the Home Page...........passed
-When User is on the New Deals Page..........................................passed
-Then User clicks on New Deals from the menu.................................passed
+When User clicks on Deals from the  Menu option.............................passed
+Then User is navigated to Deals page........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Deals Feature" name="Verify if user is able to Create New Deals - #1.1" time="12.917">
+<system-out><![CDATA[
+Given User is logged into the application and is on the Home Page...........passed
+When User clicks on New Deals from the Deals menu...........................passed
 Then User enters new deals details Lindt, Meeka,8-8-2025....................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Deals Feature" name="Create New Deals - #1.2" time="14.539">
+<testcase classname="Deals Feature" name="Verify if user is able to Create New Deals - #1.2" time="13.928">
 <system-out><![CDATA[
 Given User is logged into the application and is on the Home Page...........passed
-When User is on the New Deals Page..........................................passed
-Then User clicks on New Deals from the menu.................................passed
+When User clicks on New Deals from the Deals menu...........................passed
 Then User enters new deals details Telas, Ben,11-11-2025....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Deals Feature" name="Verify deals that are closed" time="9.75">
+<system-out><![CDATA[
+Given User is logged into the application and is on the Home Page...........passed
+When User clicks on Full Form Search from Deals menu option.................passed
+And User clicks on Closed Status radio button...............................passed
+And User clicks on Search Deals button......................................passed
+Then All the Closed deals are displayed.....................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -1,5 +1,7 @@
+@cp
 Feature: Create new contacts
 
+@cp-tc01 @regression
   Scenario Outline: Add new contacts
     Given User is logged into the application
     When User is on the contacts page

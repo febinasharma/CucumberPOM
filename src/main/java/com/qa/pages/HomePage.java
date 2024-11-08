@@ -29,8 +29,14 @@ public class HomePage extends TestBase{
 	@FindBy(xpath="//a[@title='Contacts']")
 	WebElement contactsMenu;
 	
+	@FindBy(xpath="//a[@title='Deals']")
+	WebElement dealsMenu;
+	
 	@FindBy(xpath="//a[contains(.,'New Deal')]")
 	WebElement newDealMenuOption;
+	
+	@FindBy(xpath="(//a[@title='Full Search Form'])[3]")
+	WebElement fullSearchform;
 
 
 	//Initializing the Page Objects
@@ -76,5 +82,19 @@ public class HomePage extends TestBase{
 		return new DealsPage();
 	}
 	
+	public DealsPage clickOnDealsMenu()
+	{
+		TestUtil.switchToFrame(prop.getProperty("HomePageMainframe"));
+		dealsMenu.click();
+		return new DealsPage();
+	}
+	
 
+	public DealsPage clickOnFullSearchForm()
+	{
+		TestUtil.switchToFrame(prop.getProperty("HomePageMainframe"));
+		TestUtil.performMenuAction(dealsLink);
+		fullSearchform.click();
+		return new DealsPage();
+	}
 }

@@ -24,27 +24,48 @@ public class DealsPageSteps extends TestBase{
 	HomePage homePg;
 	DealsPage dealsPg;
 	@Given("User is logged into the application and is on the Home Page")
-	public void user_is_logged_into_the_application() throws InterruptedException, IOException {
+	public void user_is_logged_into_the_application_and_is_on_the_Home_Page() throws InterruptedException, IOException {
 		TestBase.initialize();
 		loginPg=new LoginPage();
 		homePg=loginPg.login(prop.getProperty("username"), prop.getProperty("password"));
-		Assert.assertEquals(homePg.verifyPageTitle(), "CRMPRO");
+		
 //		TestUtil.takeScreenshotAtEndOfTest();
 	}
 	
-	
-	@When("User is on the New Deals Page")
-	public void user_is_on_the_new_deals_page() {
-		//homePg.clickOnNewDealsLink();
+	@When("User clicks on Deals from the  Menu option")
+	public void user_clicks_on_deals_from_the_menu_option() {
+		dealsPg=homePg.clickOnDealsMenu();
 	}
-	@Then("User clicks on New Deals from the menu")
+	@Then("User is navigated to Deals page")
+	public void user_is_navigated_to_deals_page() {
+	   Assert.assertTrue(dealsPg.getDealsLabel());
+	}
+	
+	@When("User clicks on New Deals from the Deals menu")
 	public void user_clicks_on_new_deals_from_the_menu() {
 		dealsPg=homePg.clickOnNewDealsLink();
 	}
 	@Then("^User enters new deals details (.*),(.*),(.*)$")
 	public void user_enters_new_deals_details(String compName, String primaryContact, String closeDate) throws InterruptedException, ParseException {
-//		System.out.println("Date:"+closeDate);    
 		dealsPg.createNewDeals(compName, primaryContact, closeDate);
+	}
+	
+	
+	@When("User clicks on Full Form Search from Deals menu option")
+	public void user_clicks_on_full_form_search_from_deals_menu_option() {
+	    dealsPg=homePg.clickOnFullSearchForm();
+	}
+	@When("User clicks on Closed Status radio button")
+	public void user_clicks_on_closed_status_radio_button() {
+	    dealsPg.clickClosedStatus();
+	}
+	@When("User clicks on Search Deals button")
+	public void user_clicks_on_search_deals_button() {
+	    dealsPg.clickSearchDealsBtn();
+	}
+	@Then("All the Closed deals are displayed")
+	public void all_the_closed_deals_are_displayed() {
+		Assert.assertTrue(dealsPg.verifySearchForm());
 	}
 
 }

@@ -16,8 +16,8 @@ import io.cucumber.java.en.When;
 
 public class ContactsPageSteps extends TestBase{
 	
-	LoginPage loginPg;
-	HomePage homePg;
+	static LoginPage loginPg;
+	static HomePage homePg;
 	ContactsPage contactsPg;
 	@Given("User is logged into the application")
 	public void user_is_logged_into_the_application() throws InterruptedException, IOException {

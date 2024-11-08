@@ -17,6 +17,9 @@ public class DealsPage extends TestBase{
 	@FindBy(xpath="//input[@name='client_lookup']")
 	WebElement dealCompany;
 	
+	@FindBy (xpath="//a[contains(text(),'Deals')]")
+	WebElement dealsLink;
+	
 	@FindBy(xpath="//a[contains(.,'New Deal')]")
 	WebElement newDealMenuOption;
 	
@@ -74,6 +77,21 @@ public class DealsPage extends TestBase{
 	@FindBy(xpath="//input[@value='Save' and @type='submit']")
 	WebElement submitBtnSaveDeals;
 	
+	@FindBy(xpath="(//td[contains(.,'Deals') and contains(.,'State')])[4]")
+	WebElement dealsLabel;
+	
+	@FindBy(xpath="(//a[@title='Full Search Form'])[3]")
+	WebElement fullSearchform;
+	
+	@FindBy(xpath="//input[@name='cs_closed' and @value='Y']")
+	WebElement statusClosed;
+	
+	@FindBy(xpath="//input[@value='Search Deals']")
+	WebElement searchDealsbtn;
+	
+	@FindBy(xpath="//td//strong[contains(.,'Actual Close Date')]//..//..//..//td[contains(.,'Apr') or contains(.,'Jul')]")
+	WebElement actCloseDateValue;
+	
 	public DealsPage()
 	{
 		PageFactory.initElements(driver, this);
@@ -109,6 +127,25 @@ public class DealsPage extends TestBase{
 		wait.until(ExpectedConditions.visibilityOfAllElements(calendar));
 		TestUtil.pickDateFromCalendar(monthYear, closeDate, yearForward, monthForward, yearBackward, monthBackward);
 		submitBtnSaveDeals.click();
+	}
+	
+	public boolean getDealsLabel()
+	{
+		return dealsLabel.isDisplayed();
+	}
+	
+	public void clickClosedStatus()
+	{
+		statusClosed.click();
+	}
+	
+	public void clickSearchDealsBtn()
+	{
+		searchDealsbtn.click();
+	}
+	public boolean verifySearchForm()
+	{
+		return actCloseDateValue.isDisplayed();
 	}
 
 }
